@@ -12,6 +12,7 @@ export default function Footer(){
       <span>© {new Date().getFullYear()} MoveIn Media. Virtual staging should be identified where used.</span>
       <Link to="/privacy">Privacy</Link>
       <Link to="/cookies">Cookies</Link>
+      <Link to="/refunds-cancellations">Refunds & cancellations</Link>
       <button type="button" className="footer-cookie-button" onClick={openCookieSettings}>Cookie settings</button>
     </div>
   </footer>
