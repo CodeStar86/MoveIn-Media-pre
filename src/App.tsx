@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { AuthProvider, Protected, RoleProtected } from "./lib/auth"
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
+import CookieConsent from "./components/CookieConsent"
 import Home from "./pages/Home"
 
 const EstateAgents = lazy(() => import("./pages/EstateAgents"))
@@ -18,6 +19,8 @@ const Login = lazy(() => import("./pages/Login"))
 const NotFound = lazy(() => import("./pages/NotFound"))
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"))
 const PhotographerDashboard = lazy(() => import("./pages/PhotographerDashboard"))
+const Privacy = lazy(() => import("./pages/Privacy"))
+const Cookies = lazy(() => import("./pages/Cookies"))
 
 function RouteLoading() {
   return (
@@ -47,6 +50,8 @@ export default function App() {
                 <Route path="/ai-image-upgrade" element={<Navigate to="/property-image-editing" replace />} />
                 <Route path="/before-after" element={<BeforeAfterPage />} />
                 <Route path="/pricing" element={<Pricing />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/cookies" element={<Cookies />} />
                 <Route path="/upload" element={<Protected><UploadPhotos /></Protected>} />
                 <Route path="/photographer-booking" element={<Protected><PhotographerBooking /></Protected>} />
                 <Route path="/login" element={<Login />} />
@@ -60,6 +65,7 @@ export default function App() {
             </Suspense>
           </main>
           <Footer />
+          <CookieConsent />
         </div>
       </AuthProvider>
     </BrowserRouter>
