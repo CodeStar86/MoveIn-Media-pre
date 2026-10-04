@@ -21,6 +21,7 @@ const AdminDashboard = lazy(() => import("./pages/AdminDashboard"))
 const PhotographerDashboard = lazy(() => import("./pages/PhotographerDashboard"))
 const Privacy = lazy(() => import("./pages/Privacy"))
 const Cookies = lazy(() => import("./pages/Cookies"))
+const Refunds = lazy(() => import("./pages/Refunds"))
 
 function RouteLoading() {
   return (
@@ -52,6 +53,7 @@ export default function App() {
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/cookies" element={<Cookies />} />
+                <Route path="/refunds-cancellations" element={<Refunds />} />
                 <Route path="/upload" element={<Protected><UploadPhotos /></Protected>} />
                 <Route path="/photographer-booking" element={<Protected><PhotographerBooking /></Protected>} />
                 <Route path="/login" element={<Login />} />
